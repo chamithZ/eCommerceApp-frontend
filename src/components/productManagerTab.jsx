@@ -42,11 +42,11 @@ const ProductManagerTab = ({ onSearch, onNewProductClick }) => {
           placeholder="Search for products"
           value={searchTerm}
           onChange={handleSearchChange}
-          className="w-full py-2 px-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full py-2 px-4 rounded-full border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <button
           onClick={() => onSearch(searchTerm)}
-          className="bg-[#001EB9] text-white px-4 py-2 rounded-md hover:bg-blue-600"
+          className="bg-[#001EB9] text-white px-6 py-2 rounded-full shadow-md hover:bg-blue-600 transition-all"
         >
           Search
         </button>
@@ -70,7 +70,7 @@ const ProductManagerTab = ({ onSearch, onNewProductClick }) => {
       {/* New Product Button */}
       <button
         onClick={onNewProductClick}
-        className="bg-[#001EB9] text-white px-6 py-2 rounded-md hover:bg-blue-600"
+        className="bg-[#001EB9] text-white px-8 py-3 rounded-full shadow-md hover:bg-blue-600 transition-all"
       >
         New Product
       </button>
@@ -78,7 +78,9 @@ const ProductManagerTab = ({ onSearch, onNewProductClick }) => {
       {/* Favorite Button */}
       <button
         onClick={handleFavoriteToggle}
-        className="text-[#001EB9] text-2xl hover:text-blue-600"
+        className={`text-[#001EB9] text-2xl hover:text-blue-600 transition-all ${
+          isFavorited ? 'text-blue-500' : ''
+        }`}
       >
         {isFavorited ? '★' : '☆'}
       </button>

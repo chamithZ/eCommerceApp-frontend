@@ -102,7 +102,7 @@ const ProductList = () => {
 
       <ProductManagerTab
         onSearch={setSearchTerm}
-        onNewProductClick={() => alert('New Product Clicked')}
+        onNewProductClick={() => navigate('/addProduct')}
       />
 
       <table className="w-full border-collapse border border-gray-300">
@@ -111,7 +111,6 @@ const ProductList = () => {
             <th className="p-4 text-left">SKU</th>
             <th className="p-4 text-left">IMAGE</th>
             <th className="p-4 text-left">PRODUCT NAME</th>
-            <th className="p-4 text-left">PRICE</th>
             <th className="p-4 text-left">ACTIONS</th>
           </tr>
         </thead>
@@ -128,7 +127,6 @@ const ProductList = () => {
                 />
               </td>
               <td className="p-4">{product.name}</td>
-              <td className="p-4">{product.price}</td>
               <td className="p-4 flex items-center gap-4">
                 <EditIcon
                   className="w-6 h-6 text-blue-500 cursor-pointer"
